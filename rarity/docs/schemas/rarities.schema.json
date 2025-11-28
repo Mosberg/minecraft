@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/Mosberg/minecraft/blob/main/rarity/docs/schemas/rarities.schema.json",
+  "$id": "https://raw.githubusercontent.com/Mosberg/minecraft/main/rarity/docs/schemas/rarities.schema.json",
   "title": "Minecraft Rarities",
   "description": "Schema defining rarity definitions for Minecraft items with color, icon, frame, and drop rate information",
   "type": "object",

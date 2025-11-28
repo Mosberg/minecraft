@@ -19,7 +19,7 @@ A fully data-driven Minecraft Fabric mod that introduces dynamic item rarities a
 
 ### 🧠 Fully Data-Driven
 
-- All rarity definitions are stored in [`rarities.json`](https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/data/rarity/rarities.json).
+- All rarity definitions are stored in [`rarities.json`](https://raw.githubusercontent.com/Mosberg/minecraft/main/rarity/src/main/resources/data/rarity/rarities.json).
 - Easy to customize, extend, or rebalance without touching code.
 
 ### 💾 Persistent & Visible Properties
