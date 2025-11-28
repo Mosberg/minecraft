@@ -1,0 +1,200 @@
+{
+  "$id": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/data/rarity/rarities.json",
+  "rarities": [
+    {
+      "id": "rarity:0",
+      "name": "Trash",
+      "color": "#4b371c",
+      "description": "Worthless scraps and broken junk, rarely useful and often discarded.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/trash_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/trash_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.001,
+        "drop": 0.001,
+        "loot": 0.001
+      }
+    },
+    {
+      "id": "rarity:1",
+      "name": "Common",
+      "color": "#969696",
+      "description": "Everyday items, easy to find and craft.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/common_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/common_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.75,
+        "drop": 0.5,
+        "loot": 0.8
+      }
+    },
+    {
+      "id": "rarity:2",
+      "name": "Uncommon",
+      "color": "#3dd20b",
+      "description": "Slightly rare, offering minor enhancements.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/uncommon_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/uncommon_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.5,
+        "drop": 0.25,
+        "loot": 0.4
+      }
+    },
+    {
+      "id": "rarity:3",
+      "name": "Rare",
+      "color": "#2f78ff",
+      "description": "Challenging to find, with noticeable improvements.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/rare_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/rare_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.3,
+        "drop": 0.12,
+        "loot": 0.15
+      }
+    },
+    {
+      "id": "rarity:4",
+      "name": "Epic",
+      "color": "#ab46ff",
+      "description": "Highly valuable gear with strong abilities.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/epic_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/epic_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.15,
+        "drop": 0.06,
+        "loot": 0.07
+      }
+    },
+    {
+      "id": "rarity:5",
+      "name": "Legendary",
+      "color": "#ff9600",
+      "tooltip": "Exceptionally rare, with unique powers.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/legendary_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/legendary_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.07,
+        "drop": 0.03,
+        "loot": 0.03
+      }
+    },
+    {
+      "id": "rarity:6",
+      "name": "Mythic",
+      "color": "#ff0b00",
+      "tooltip": "Beyond legendary, grants powerful effects.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/mythic_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/mythic_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.03,
+        "drop": 0.015,
+        "loot": 0.015
+      }
+    },
+    {
+      "id": "rarity:7",
+      "name": "Ancient",
+      "color": "#00ffff",
+      "tooltip": "Infused with ancient magic and mystery.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/ancient_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/ancient_frame.png"
+      },
+      "rates": {
+        "crafting": 0.02,
+        "drop": 0.01,
+        "loot": 0.01
+      }
+    },
+    {
+      "id": "rarity:8",
+      "name": "Celestial",
+      "color": "#ff69b4",
+      "tooltip": "Charged with cosmic, otherworldly energy.",
+      "assets": {
+        "icon": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/celestial_icon.png",
+        "frame": "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/celestial_frame.png"
+      },
+      "dropRates": {
+        "crafting": 0.01,
+        "drop": 0.005,
+        "loot": 0.005
+      }
+    },
+    {
+      "id": "rarity:9",
+      "name": "Divine",
+      "color": "0% {color: #ffffff;}, 25% {color: #fffacd;}, 50% {color: #fff68f;}, 75% {color: #ffec60;}, 100% {color: #ffd700;}",
+      "tooltip": "Blessed by gods, embodying supreme rarity.",
+      "assets": {
+        "icon": [
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_icon_1.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_icon_2.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_icon_3.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_icon_4.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_icon_5.png"
+        ],
+        "frame": [
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_frame_1.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_frame_2.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_frame_3.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_frame_4.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/divine_frame_5.png"
+        ]
+      },
+      "dropRates": {
+        "crafting": 0.005,
+        "drop": 0.002,
+        "loot": 0.002
+      }
+    },
+    {
+      "id": "rarity:10",
+      "name": "Transcendent",
+      "color": "0% {color: #ff0000;}, 14% {color: #ff9900;}, 28% {color: #ffff00;}, 42% {color: #00ff00;}, 56% {color: #00ffff;}, 70% {color: #0000ff;}, 84% {color: #ff00ff;}, 100% {color: #4b0082;}",
+      "tooltip": "Beyond all limits, near-godlike power.",
+      "assets": {
+        "icon": [
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_1.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_2.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_3.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_4.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_5.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_6.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_7.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_icon_8.png"
+        ],
+        "frame": [
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_1.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_2.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_3.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_4.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_5.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_6.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_7.png",
+          "https://github.com/Mosberg/minecraft/blob/main/rarity/src/main/resources/assets/rarity/textures/gui/transcendent_frame_8.png"
+        ]
+      },
+      "dropRates": {
+        "crafting": 0.002,
+        "drop": 0.001,
+        "loot": 0.001
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mosberg/minecraft/relics-of-rarity/schemas/nbt.schema.json",
+  "title": "nbt.schema.json",
+  "type": "object",
+  "required": ["id", "Count", "tag"],
+  "additionalProperties": false,
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "attribute_modifier": {
+      "type": "object",
+      "required": ["attribute", "operation", "amount", "uuid"],
+      "additionalProperties": false,
+      "properties": {
+        "attribute": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string", "enum": ["add", "multiply", "set"] },
+        "amount": { "type": "number" },
+        "uuid": { "$ref": "#/$defs/uuid" },
+        "slot": { "type": "string" }
+      }
+    },
+    "resolved_modifier": {
+      "type": "object",
+      "required": ["id", "value", "type", "attribute_modifiers"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "display_name": { "type": "string" },
+        "value": { "type": "number" },
+        "type": { "type": "string" },
+        "scope": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "attribute_modifiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/attribute_modifier" }
+        }
+      }
+    }
+  },
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "Count": { "type": "integer", "minimum": 1, "maximum": 127 },
+    "tag": {
+      "type": "object",
+      "required": ["relics_of_rarity::rarity", "relics_of_rarity::modifiers"],
+      "additionalProperties": true,
+      "properties": {
+        "relics_of_rarity::rarity": { "type": "string", "minLength": 1 },
+        "relics_of_rarity::source": { "type": "string" },
+        "relics_of_rarity::generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "relics_of_rarity::modifiers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/resolved_modifier" },
+          "description": "Resolved modifier instances with concrete values and UUIDs for attribute modifiers."
+        },
+        "display": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "Name": { "type": "string" },
+            "Lore": { "type": "array", "items": { "type": "string" } },
+            "CustomModelData": { "type": "integer" }
+          }
+        },
+        "HideFlags": { "type": "integer" },
+        "relics_of_rarity::ui": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "icon_frame": { "type": "string" },
+            "tooltip_icon": { "type": "string" },
+            "name_color": {
+              "type": "string",
+              "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+            }
+          }
+        }
+      },
+      "unevaluatedProperties": true
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Mosberg/minecraft/blob/main/rarity/docs/schemas/rarities.schema.json",
+  "title": "Minecraft Rarities",
+  "description": "Schema defining rarity definitions for Minecraft items with color, icon, frame, and drop rate information",
+  "type": "object",
+  "properties": {
+    "rarities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "color", "assets", "dropRates"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^rarity:[0-9]+$",
+            "description": "Unique rarity identifier."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the rarity."
+          },
+          "color": {
+            "type": "string",
+            "description": "Hex color code or gradient string."
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description for lower rarities."
+          },
+          "tooltip": {
+            "type": "string",
+            "description": "Optional tooltip for higher rarities."
+          },
+          "assets": {
+            "type": "object",
+            "required": ["icon", "frame"],
+            "properties": {
+              "icon": {
+                "oneOf": [
+                  { "type": "string", "format": "uri" },
+                  {
+                    "type": "array",
+                    "items": { "type": "string", "format": "uri" },
+                    "minItems": 1
+                  }
+                ]
+              },
+              "frame": {
+                "oneOf": [
+                  { "type": "string", "format": "uri" },
+                  {
+                    "type": "array",
+                    "items": { "type": "string", "format": "uri" },
+                    "minItems": 1
+                  }
+                ]
+              }
+            }
+          },
+          "dropRates": {
+            "type": "object",
+            "required": ["crafting", "drop", "loot"],
+            "properties": {
+              "crafting": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "drop": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "loot": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["rarities"],
+  "additionalProperties": false
+}

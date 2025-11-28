@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mosberg/minecraft/relics-of-rarity/schemas/modifiers.schema.json",
+  "title": "modifiers.schema.json",
+  "type": "object",
+  "required": ["modifiers"],
+  "additionalProperties": false,
+  "$defs": {
+    "namespaced_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_.-]+:[a-z0-9_/.-]+$",
+      "description": "Namespaced identifier (e.g., modid:modifier_id)."
+    },
+    "value_range": {
+      "type": "object",
+      "required": ["min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "step": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Optional sampling step for discrete ranges."
+        }
+      },
+      "description": "Numeric range used when sampling a resolved modifier value."
+    },
+    "attribute_modifier": {
+      "type": "object",
+      "required": ["attribute", "operation", "value_source"],
+      "additionalProperties": false,
+      "properties": {
+        "attribute": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Attribute name (vanilla or namespaced custom)."
+        },
+        "operation": {
+          "type": "string",
+          "enum": ["add", "multiply", "set"],
+          "description": "How the attribute is applied."
+        },
+        "value_source": {
+          "oneOf": [{ "type": "string" }, { "type": "number" }],
+          "description": "Either a literal number or a formula token (e.g., \"value\", \"1+value\")."
+        },
+        "slot": {
+          "type": "string",
+          "description": "Optional equipment slot to restrict the modifier."
+        }
+      }
+    }
+  },
+  "properties": {
+    "modifiers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "display_name",
+          "scope",
+          "value_range",
+          "chance",
+          "type",
+          "attribute_modifiers"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/namespaced_id" },
+          "display_name": { "type": "string", "minLength": 1 },
+          "scope": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Item types or tags this modifier can apply to (e.g., sword, pickaxe, armor)."
+          },
+          "value_range": { "$ref": "#/$defs/value_range" },
+          "chance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": ["add", "multiply", "set", "unique"]
+          },
+          "stacking": {
+            "type": "string",
+            "enum": ["stack", "multiply", "max", "unique"],
+            "default": "stack",
+            "description": "How multiple instances of this modifier combine."
+          },
+          "attribute_modifiers": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/attribute_modifier" }
+          },
+          "cooldown_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Optional cooldown for active or triggered modifiers."
+          },
+          "description": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional freeform tags for tooling and filtering."
+          },
+          "ui_hint": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "icon": { "type": "string" },
+              "color": {
+                "type": "string",
+                "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+              }
+            }
+          }
+        }
+      },
+      "description": "Array of modifier definitions."
+    }
+  }
+}

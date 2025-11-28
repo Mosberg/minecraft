@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mosberg/minecraft/relics-of-rarity/schemas/rarities.schema.json",
+  "title": "rarities.schema.json",
+  "type": "object",
+  "required": ["tiers"],
+  "additionalProperties": false,
+  "$defs": {
+    "namespaced_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_.-]+:[a-z0-9_/.-]+$",
+      "description": "Namespaced identifier (e.g., modid:key). Lowercase recommended."
+    },
+    "color_hex": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "description": "Hex color string used for UI tinting."
+    },
+    "weight_map": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "default": { "type": "number", "minimum": 0 },
+        "craft": { "type": "number", "minimum": 0 },
+        "loot_dungeon": { "type": "number", "minimum": 0 },
+        "loot_boss": { "type": "number", "minimum": 0 }
+      },
+      "patternProperties": {
+        "^[a-zA-Z0-9_\\-]+$": { "type": "number", "minimum": 0 }
+      },
+      "description": "Contextual weights; additional contexts allowed via patternProperties."
+    },
+    "modifier_count": {
+      "type": "object",
+      "required": ["min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "max": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "description": "Minimum and maximum number of modifiers to apply. Keep values reasonable for performance."
+    }
+  },
+  "properties": {
+    "tiers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["key", "id", "display_name", "color_hex", "weights"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_\\-]+$",
+            "description": "Short machine-friendly key for the tier."
+          },
+          "id": { "$ref": "#/$defs/namespaced_id" },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Human readable name (use localization keys if desired)."
+          },
+          "color_hex": { "$ref": "#/$defs/color_hex" },
+          "icon_frame": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path to frame texture."
+          },
+          "tooltip_icon": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path to tooltip icon texture."
+          },
+          "weights": { "$ref": "#/$defs/weight_map" },
+          "modifiers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "default": [],
+            "description": "Optional explicit modifier ids to always include for this tier."
+          },
+          "modifier_chance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0,
+            "description": "Probability an item of this tier receives modifiers."
+          },
+          "modifier_count": { "$ref": "#/$defs/modifier_count" },
+          "modifier_pool": {
+            "type": "array",
+            "items": { "type": "string" },
+            "default": [],
+            "description": "Pool of modifier ids to sample from when generating modifiers."
+          },
+          "ui_priority": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 0,
+            "description": "Optional rendering priority for UI overlays; higher values render on top."
+          }
+        }
+      },
+      "description": "Array of rarity tier definitions."
+    }
+  }
+}
