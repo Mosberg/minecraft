@@ -2,20 +2,30 @@
 
 ## Overview
 
-The Mimic Mod introduces deceptive treasure chests into Minecraft. What looks like loot may hide a hungry monster. This mod blends **gameplay mechanics, lore, and atmosphere** to create encounters players will remember.
+- The Mimic Mod introduces deceptive treasure chests into Minecraft.
+
+- What looks like loot may hide a hungry monster.
+
+- This mod blends **gameplay mechanics, lore, and atmosphere** to create encounters players will remember.
 
 ---
 
 ## Features
 
 - **Mimic Entity**
-  - Classic and Corrupted variants (with expansion hooks for Ancient Mimic).
-  - Balanced by biome × difficulty × variant scaling.
+
+  - Classic and Corrupted variants.
+  - Balanced by difficulty × variant scaling.
+
 - **Loot System**
+
   - Junk, rare items, and unique cosmetic drops (Mimic Fang).
   - Lore Pages I–IV, collectible for advancement progression.
+
 - **Advancements**
-  - Root → Too Good To Be True → Greed’s Punishment → Collector of Curses → (hidden) Ancient Hunger.
+
+  - Root → Too Good To Be True → Greed’s Punishment → Collector of Curses.
+
 - **Atmosphere**
   - Ambient sound cues (creaks, growls, whispers).
   - Variant‑specific textures and animations.
@@ -34,10 +44,9 @@ The Mimic Mod introduces deceptive treasure chests into Minecraft. What looks li
 
 - Config file: `config/mimic.json`
 - Options include:
-  - **Base health/damage values**
+  - **Base health/Damage values**
   - **Difficulty multipliers** (Easy, Normal, Hard)
-  - **Biome multipliers** (e.g., swamp, desert, deep dark)
-  - **Variant multipliers** (classic, corrupted, ancient)
+  - **Variant multipliers** (classic, corrupted)
 
 Schema validation ensures configs remain consistent across updates.
 
@@ -47,7 +56,6 @@ Schema validation ensures configs remain consistent across updates.
 
 - **Cursed Pages I–IV** drop from mimics.
 - Collect all pages to unlock _Collector of Curses_.
-- Hidden advancement _The Ancient Hunger_ awaits future boss content.
 
 ---
 
@@ -56,9 +64,7 @@ Schema validation ensures configs remain consistent across updates.
 - ✅ Core scaffold (entities, config, loot, advancements).
 - 🎨 Textures, animations, ambient sounds.
 - 🪙 Cosmetic drops + lore polish.
-- 📖 Narrative integration (NPC hints, codex system).
 - ⚖️ Balancing passes.
-- 🚀 Expansion: Ancient Mimic boss fight.
 
 ---
 
