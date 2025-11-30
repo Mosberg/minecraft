@@ -1,4 +1,4 @@
-# Mimic Mod 🪙📖
+# Mimic Mod 📖
 
 ## Overview
 
